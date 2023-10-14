@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>To Do List</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+<section class="container">
+  
+  <div class="heading">
+    <img class="heading__img" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/756881/laptop.svg">
+    <h1 class="heading__title"><%= listTitle %></h1>
+  </div>
+
+ 
+  <form class="form" action="/" method="post">
+    <div>
+      <label class="form__label" for="todo">~ Today I need to ~</label>
+      <input class="form__input"
+           type="text" 
+           id="todo" 
+           name="todo"
+           size="30"
+           required>
+      
+      <button class="button" type="submit" name="list" value="<%= listTitle %>"><span>Submit</span></button>
+     
+
+    </div>
+  </form>
+  
+  <div>
+    <ul class="toDoList">
+     
+         <% if(locals.newListItems){ %>
+       <%newListItems.forEach(function(item){ %>
+        <form action="/delete" method="post">
+         <li>
+        <input type="checkbox" name="checkbox" value="<%= item._id %>" onChange="this.form.submit()" >
+        <%= item.name %>
+        </li>
+        <input type="hidden" name="list" value="<%= listTitle %>">
+        </form>
+       <% }); %>
+      <% } %>
+      
+    </ul>
+  </div>
+  
+</section>
+<%- include("footer") -%>
+<!-- </body>
+
+<footer>
+  <p>Copyright 2023 Rishab Mishra
+    
+</footer>
+
+</html> -->

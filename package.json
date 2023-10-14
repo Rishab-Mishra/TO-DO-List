@@ -1,0 +1,17 @@
+{
+  "name": "to-do-list-codepen",
+  "version": "1.0.0",
+  "description": "To do List daily task",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "lodash": "^4.17.21",
+    "mongoose": "^7.6.1"
+  }
+}
